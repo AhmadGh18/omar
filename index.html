@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sign Up</title>
+  <title>FitTrack — Train Smarter</title>
 
   <style>
-    /* simple reset so the form looks the same everywhere */
+
     * {
       margin: 0;
       padding: 0;
@@ -15,191 +15,476 @@
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      min-height: 100vh;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .navbar {
       display: flex;
       align-items: center;
+      justify-content: space-between;
+      padding: 18px 40px;
+      background: #ffffff;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    .navbar .logo {
+      font-size: 22px;
+      font-weight: bold;
+      color: #ff6b35;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .navbar ul li a {
+      text-decoration: none;
+      color: #555;
+      font-size: 15px;
+    }
+
+    .navbar ul li a:hover {
+      color: #ff6b35;
+    }
+
+    .navbar .nav-btn {
+      background: #ff6b35;
+      color: white;
+      padding: 9px 18px;
+      border-radius: 8px;
+    }
+
+    .navbar .nav-btn:hover {
+      background: #e85320;
+      color: white;
+    }
+
+    .hero {
+      background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20241224/pngtree-a-fully-equipped-gym-with-dumbbells-weight-machines-and-cardio-equipment-image_16843660.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding: 90px 20px;
+    }
+
+    .hero h1 {
+      font-size: 44px;
+      margin-bottom: 18px;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero p {
+      font-size: 18px;
+      max-width: 600px;
+      margin: 0 auto 30px auto;
+      text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
       justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .hero .btn {
+      display: inline-block;
+      background: #ffffff;
+      color: #ff6b35;
+      text-decoration: none;
+      padding: 14px 32px;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .hero .btn.outline {
+      background: transparent;
+      color: #ffffff;
+      border: 2px solid #ffffff;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 50px;
+      padding: 45px 20px;
+      background: #ffffff;
+      border-bottom: 1px solid #eee;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat .number {
+      font-size: 36px;
+      font-weight: bold;
+      color: #ff6b35;
+    }
+
+    .stat .label {
+      color: #888;
+      font-size: 15px;
+    }
+
+    .section {
+      padding: 70px 20px;
+      text-align: center;
+    }
+
+    .section h2 {
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
+
+    .section p.lead {
+      color: #777;
+      max-width: 550px;
+      margin: 0 auto 40px auto;
+    }
+
+    .section.alt {
+      background: #f7f7fb;
+    }
+
+    .cards {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      flex-wrap: wrap;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .feature {
+      background: #ffffff;
+      border: 1px solid #eee;
+      border-radius: 12px;
+      padding: 30px 24px;
+      width: 280px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+    }
+
+    .feature img {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 16px;
+    }
+
+    .feature h3 {
+      margin-bottom: 10px;
+      color: #444;
+    }
+
+    .feature p {
+      color: #888;
+      font-size: 15px;
+    }
+
+    .steps {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      flex-wrap: wrap;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .step {
+      width: 280px;
       padding: 20px;
     }
 
-    .card {
-      background: #ffffff;
-      width: 100%;
-      max-width: 550px;
-      padding: 35px;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    }
-
-    .card h1 {
-      text-align: center;
-      color: #333;
-      margin-bottom: 5px;
-    }
-
-    .card p.subtitle {
-      text-align: center;
-      color: #888;
-      margin-bottom: 25px;
-      font-size: 14px;
-    }
-
-    /* put two fields next to each other */
-    .row {
-      display: flex;
-      gap: 15px;
-    }
-
-    .field {
-      margin-bottom: 18px;
-      flex: 1;
-    }
-
-    .field label {
-      display: block;
-      margin-bottom: 6px;
-      color: #555;
-      font-size: 14px;
-      font-weight: bold;
-    }
-
-    .field input,
-    .field select {
-      width: 100%;
-      padding: 12px 14px;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      font-size: 15px;
-      background: #fafafa;
-      transition: border 0.2s, background 0.2s;
-    }
-
-    .field input:focus,
-    .field select:focus {
-      outline: none;
-      border-color: #667eea;
-      background: #ffffff;
-    }
-
-    .btn {
-      width: 100%;
-      padding: 14px;
-      margin-top: 10px;
-      border: none;
-      border-radius: 8px;
-      background: #667eea;
+    .step .circle {
+      width: 55px;
+      height: 55px;
+      line-height: 55px;
+      margin: 0 auto 16px auto;
+      border-radius: 50%;
+      background: #ff6b35;
       color: white;
-      font-size: 16px;
+      font-size: 22px;
       font-weight: bold;
-      cursor: pointer;
-      transition: background 0.2s;
     }
 
-    .btn:hover {
-      background: #5568d3;
+    .step h3 {
+      margin-bottom: 8px;
+      color: #444;
     }
 
-    .login-text {
-      text-align: center;
-      margin-top: 18px;
-      font-size: 14px;
-      color: #777;
+    .step p {
+      color: #888;
+      font-size: 15px;
     }
 
-    .login-text a {
-      color: #667eea;
+    .cta-box {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 50px 30px;
+      max-width: 700px;
+      margin: 0 auto;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    .cta-box a.btn {
+      display: inline-block;
+      background: #ff6b35;
+      color: white;
       text-decoration: none;
+      padding: 14px 32px;
+      border-radius: 8px;
+      font-weight: bold;
+      margin-top: 10px;
     }
 
-    .login-text a:hover {
-      text-decoration: underline;
+    .cta-box a.btn:hover {
+      background: #e85320;
     }
 
-    /* on small screens stack the rows and tighten spacing */
-    @media (max-width: 500px) {
-      .row {
+    footer {
+      background: #2b2b35;
+      color: #ccc;
+      padding: 50px 40px 25px 40px;
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 30px;
+      max-width: 1000px;
+      margin: 0 auto 30px auto;
+    }
+
+    .footer-col h4 {
+      color: #ffffff;
+      margin-bottom: 14px;
+      font-size: 16px;
+    }
+
+    .footer-col p {
+      font-size: 14px;
+      max-width: 250px;
+      color: #aaa;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 8px;
+    }
+
+    .footer-col ul li a {
+      color: #aaa;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .footer-col ul li a:hover {
+      color: #ffffff;
+    }
+
+    .footer-col .logo {
+      font-size: 20px;
+      font-weight: bold;
+      color: #ff6b35;
+      margin-bottom: 12px;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      border-top: 1px solid #444;
+      padding-top: 20px;
+      font-size: 14px;
+      color: #888;
+    }
+
+    @media (max-width: 600px) {
+      .navbar {
+        padding: 15px 20px;
         flex-direction: column;
-        gap: 0;
+        gap: 12px;
       }
 
-      body {
-        padding: 12px;
+      .navbar ul {
+        gap: 18px;
+        flex-wrap: wrap;
+        justify-content: center;
       }
 
-      .card {
-        padding: 25px 20px;
+      .hero {
+        padding: 60px 20px;
       }
 
-      .card h1 {
-        font-size: 22px;
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .stats {
+        gap: 30px;
+      }
+
+      .section {
+        padding: 50px 20px;
+      }
+
+      .section h2 {
+        font-size: 26px;
+      }
+
+      .footer-top {
+        flex-direction: column;
       }
     }
   </style>
 </head>
 <body>
 
-  <div class="card">
-    <h1>Create Account</h1>
-    <p class="subtitle">Fill in your details to get started</p>
+  <nav class="navbar">
+    <div class="logo">FitTrack</div>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#how">How It Works</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="signup.html" class="nav-btn">Sign Up</a></li>
+    </ul>
+  </nav>
 
-    <form>
+  <header class="hero" id="home">
+    <h1>Train Smarter with FitTrack</h1>
+    <p>Log your workouts, track your progress, and crush your fitness goals. Your personal gym companion, right in your pocket.</p>
+    <div class="hero-buttons">
+      <a href="signup.html" class="btn">Start Training Free</a>
+      <a href="#features" class="btn outline">Learn More</a>
+    </div>
+  </header>
 
-      <div class="row">
-        <div class="field">
-          <label for="firstName">First Name</label>
-          <input type="text" id="firstName" placeholder="John" required>
-        </div>
-
-        <div class="field">
-          <label for="lastName">Last Name</label>
-          <input type="text" id="lastName" placeholder="Doe" required>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="field">
-          <label for="dob">Date of Birth</label>
-          <input type="date" id="dob" required>
-        </div>
-
-        <div class="field">
-          <label for="gender">Gender</label>
-          <select id="gender" required>
-            <option value="">Select...</option>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-            <option value="other">Other</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="field">
-        <label for="email">Email</label>
-        <input type="email" id="email" placeholder="john@example.com" required>
-      </div>
-
-      <div class="field">
-        <label for="phone">Phone</label>
-        <input type="tel" id="phone" placeholder="+1 234 567 890" required>
-      </div>
-
-      <div class="field">
-        <label for="password">Password</label>
-        <input type="password" id="password" placeholder="Enter a password" required>
-      </div>
-
-      <div class="field">
-        <label for="confirmPassword">Confirm Password</label>
-        <input type="password" id="confirmPassword" placeholder="Repeat your password" required>
-      </div>
-
-      <button type="submit" class="btn">Sign Up</button>
-
-      <p class="login-text">Already have an account? <a href="./login-form.html">Log in</a></p>
-
-    </form>
+  <div class="stats">
+    <div class="stat">
+      <div class="number">100+</div>
+      <div class="label">Built-in Exercises</div>
+    </div>
+    <div class="stat">
+      <div class="number">12</div>
+      <div class="label">Muscle Groups</div>
+    </div>
+    <div class="stat">
+      <div class="number">100%</div>
+      <div class="label">Free to Use</div>
+    </div>
+    <div class="stat">
+      <div class="number">0</div>
+      <div class="label">Ads</div>
+    </div>
   </div>
+
+  <section class="section" id="features">
+    <h2>Everything You Need to Get Fit</h2>
+    <p class="lead">Powerful tools to plan, track, and smash every workout.</p>
+
+    <div class="cards">
+      <div class="feature">
+        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=300&q=80" alt="Dumbbell workout">
+        <h3>Log Your Workouts</h3>
+        <p>Record every set, rep, and weight in seconds. Never lose track of a session again.</p>
+      </div>
+
+      <div class="feature">
+        <img src="https://images.unsplash.com/photo-1486218119243-13883505764c?auto=format&fit=crop&w=300&q=80" alt="Progress chart">
+        <h3>Track Your Progress</h3>
+        <p>See your strength grow with clear charts and personal records over time.</p>
+      </div>
+
+      <div class="feature">
+        <img src="https://images.unsplash.com/photo-1434596922112-19c563067271?auto=format&fit=crop&w=300&q=80" alt="Reaching a goal">
+        <h3>Reach Your Goals</h3>
+        <p>Set targets, build routines, and stay motivated every step of the way.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="how">
+    <h2>How It Works</h2>
+    <p class="lead">Getting started is as easy as one, two, three.</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="circle">1</div>
+        <h3>Create Your Account</h3>
+        <p>Sign up for free in under a minute. No credit card needed.</p>
+      </div>
+
+      <div class="step">
+        <div class="circle">2</div>
+        <h3>Build Your Routine</h3>
+        <p>Pick your exercises and set your goals based on what you want to achieve.</p>
+      </div>
+
+      <div class="step">
+        <div class="circle">3</div>
+        <h3>Train &amp; Track</h3>
+        <p>Hit the gym, log your sets, and watch your progress climb week after week.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="join">
+    <div class="cta-box">
+      <h2>Ready to Start Your Fitness Journey?</h2>
+      <p class="lead">Create a free account and start logging your workouts in minutes. No cost, no ads.</p>
+      <a href="signup.html" class="btn">Create Account</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-top">
+      <div class="footer-col">
+        <div class="logo">FitTrack</div>
+        <p>Your personal gym companion. Track workouts, build strength, and reach your goals.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#how">How It Works</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Account</h4>
+        <ul>
+          <li><a href="signup.html">Sign Up</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 FitTrack. All rights reserved.</p>
+    </div>
+  </footer>
 
 </body>
 </html>

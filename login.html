@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Log In</title>
+  <title>Log In — FitTrack</title>
 
   <style>
-    /* simple reset so the form looks the same everywhere */
+
     * {
       margin: 0;
       padding: 0;
@@ -15,7 +15,7 @@
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: linear-gradient(135deg, #667eea, #764ba2);
+      background: #ffffff;
       min-height: 100vh;
       display: flex;
       align-items: center;
@@ -29,7 +29,8 @@
       max-width: 420px;
       padding: 35px;
       border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      border: 1px solid #eee;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     }
 
     .card h1 {
@@ -64,16 +65,14 @@
       border-radius: 8px;
       font-size: 15px;
       background: #fafafa;
-      transition: border 0.2s, background 0.2s;
     }
 
     .field input:focus {
       outline: none;
-      border-color: #667eea;
+      border-color: #ff6b35;
       background: #ffffff;
     }
 
-    /* the "remember me" + "forgot password" line */
     .options {
       display: flex;
       align-items: center;
@@ -90,7 +89,7 @@
     }
 
     .options a {
-      color: #667eea;
+      color: #ff6b35;
       text-decoration: none;
     }
 
@@ -103,16 +102,15 @@
       padding: 14px;
       border: none;
       border-radius: 8px;
-      background: #667eea;
+      background: #ff6b35;
       color: white;
       font-size: 16px;
       font-weight: bold;
       cursor: pointer;
-      transition: background 0.2s;
     }
 
     .btn:hover {
-      background: #5568d3;
+      background: #e85320;
     }
 
     .signup-text {
@@ -123,7 +121,7 @@
     }
 
     .signup-text a {
-      color: #667eea;
+      color: #ff6b35;
       text-decoration: none;
     }
 
@@ -131,7 +129,6 @@
       text-decoration: underline;
     }
 
-    /* make it comfortable on small phone screens */
     @media (max-width: 480px) {
       body {
         padding: 12px;
@@ -151,7 +148,7 @@
 
   <div class="card">
     <h1>Welcome Back</h1>
-    <p class="subtitle">Log in to your account</p>
+    <p class="subtitle">Log in to continue your training</p>
 
     <form>
 
@@ -174,7 +171,7 @@
 
       <button type="submit" class="btn">Log In</button>
 
-      <p class="signup-text">Don't have an account? <a href="/">Sign up</a></p>
+      <p class="signup-text">Don't have an account? <a href="signup.html">Sign up</a></p>
 
     </form>
   </div>
